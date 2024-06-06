@@ -1,8 +1,8 @@
 import process from 'node:process';
 import { URL } from 'node:url';
 import { Client, GatewayIntentBits } from 'discord.js';
-import { loadCommands, loadEvents } from './util/loaders.ts';
-import { registerEvents } from './util/registerEvents.ts';
+import { loadCommands, loadEvents } from './util/loaders.js';
+import { registerEvents } from './util/registerEvents.js';
 
 // Initialize the client
 const client = new Client({ intents: [GatewayIntentBits.Guilds] });
