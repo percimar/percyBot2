@@ -36,5 +36,5 @@ export const schema = z.object({
 /**
  * Defines the predicate to check if an object is a valid Event type.
  */
-export const predicate: StructurePredicate<Event> = (structure: unknown): structure is Event =>
+export const isEvent: StructurePredicate<Event> = (structure: unknown): structure is Event =>
 	schema.safeParse(structure).success;

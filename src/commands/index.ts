@@ -29,5 +29,5 @@ export const schema = z.object({
 /**
  * Defines the predicate to check if an object is a valid Command type.
  */
-export const predicate: StructurePredicate<Command> = (structure: unknown): structure is Command =>
+export const isCommand: StructurePredicate<Command> = (structure: unknown): structure is Command =>
 	schema.safeParse(structure).success;
