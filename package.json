@@ -10,7 +10,7 @@
 		"deploy": "node --require dotenv/config dist/util/deploy.js",
 		"format": "prettier --write . && eslint --ext .ts --fix --format=pretty src",
 		"start": "node --require dotenv/config dist/index.js",
-		"start:dev": "nodemon -e ts --signal SIGINT --ignore dump/ -x \"tsc && node --require dotenv/config\" dist/index.js || exit 1"
+		"start:dev": "nodemon -e ts --signal SIGINT --ignore dump/ -x \"tsc && node --require dotenv/config dist/index.js || exit 1\""
 	},
 	"dependencies": {
 		"@discordjs/core": "^1.2.0",

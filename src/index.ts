@@ -9,7 +9,14 @@ import { registerEvents } from './util/registerEvents.js';
 	await Repository.bootstrap();
 
 	// Initialize the client
-	const client = new Client({ intents: [GatewayIntentBits.Guilds] });
+	const client = new Client({
+		intents: [
+			GatewayIntentBits.Guilds,
+			GatewayIntentBits.GuildPresences,
+			GatewayIntentBits.GuildMessages,
+			GatewayIntentBits.DirectMessages,
+		],
+	});
 
 	// Load the events and commands
 	const events = await loadEvents(new URL('events/', import.meta.url));

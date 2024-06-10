@@ -1,16 +1,13 @@
 import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import process from 'node:process';
 import { get, set } from 'lodash-es';
-import type { PathValue, Paths } from './ts-utils.js';
+import type { PathValue, Paths } from '../types/paths.js';
+import type { State } from '../types/state.js';
 
 // Simple in-memory persistent db, will move to an actual db when scale requires.
-type State = {
-	featureToggles: {
-		spawnCamp: boolean;
-	};
-};
 const initialState: State = {
 	featureToggles: { spawnCamp: false },
+	spawnCamps: [],
 };
 let db: State;
 
